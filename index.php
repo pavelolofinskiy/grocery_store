@@ -1,3 +1,4 @@
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,13 +19,14 @@ if (isset($_SESSION['user_id'])) {
     $username = $_SESSION['username'];
 
     echo "<p>Welcome, $username! <a href='logout.php'>Logout</a></p>";
+    echo "<p><a href='products/list.php'>Products</a></p>";
 } else {
 
     echo "<p>Welcome, Guest! <a href='login.php'>Login</a> or <a href='register.php'>Register</a></p>";
 }
 ?>
-    <footer>
-        <p>&copy; 2024 My Website</p>
-    </footer>
+
+
 </body>
 </html>
+<?php include 'includes/footer.php'; ?>
