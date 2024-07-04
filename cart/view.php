@@ -1,4 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic HTML Script</title>
+    <link rel="stylesheet" href="assets\css\main.css">
+</head>
+
 <?php
+
+
 include '../includes/db.php';
 include '../includes/header.php';
 
@@ -17,6 +28,11 @@ $sql = "SELECT cart.id, products.name, products.price, cart.quantity
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$userId]);
 $cartItems = $stmt->fetchAll();
+
+$totalPrice = 0;
+foreach ($cartItems as $item) {
+    $totalPrice += $item['price'] * $item['quantity'];
+}
 ?>
 
 <h2>Your Cart</h2>
@@ -27,8 +43,13 @@ $cartItems = $stmt->fetchAll();
             <p>Price: <?php echo $item['price']; ?></p>
             <p>Quantity: <?php echo $item['quantity']; ?></p>
             <a href="/cart/remove.php?id=<?php echo $item['id']; ?>">Remove</a>
+            <p><?php 
+
+            ?></p>
         </div>
     <?php endforeach; ?>
 </div>
+
+<p>Total Price: <?php echo $totalPrice; ?></p>
 
 <?php include '../includes/footer.php'; ?>
