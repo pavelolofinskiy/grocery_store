@@ -24,6 +24,7 @@ $products = $stmt->fetchAll();
             <h3><?php echo $product['name']; ?></h3>
             <p><?php echo $product['description']; ?></p>
             <p>Price: <?php echo $product['price']; ?></p>
+            <a href="/products/product_view.php?id=<?php echo $product['id']; ?>">View Product</a>
             <a href="/cart/add.php?id=<?php echo $product['id']; ?>">Add to Cart</a>
         </div>
     <?php endforeach; ?>
