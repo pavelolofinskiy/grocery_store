@@ -40,7 +40,7 @@ foreach ($cartItems as $item) {
     <?php foreach ($cartItems as $item): ?>
         <div class="cart-item">
             <h3><?php echo $item['name']; ?></h3>
-            <p>Price: <?php echo $item['price']; ?></p>
+            <p>Price: $<?php echo $item['price']; ?></p>
             <p>Quantity: <?php echo $item['quantity']; ?></p>
             <a href="/cart/remove.php?id=<?php echo $item['id']; ?>">Remove</a>
             <p><?php 
@@ -49,6 +49,8 @@ foreach ($cartItems as $item) {
         </div>
     <?php endforeach; ?>
 </div>
+<button onclick="history.back()">Back</button>
+<p><a href='/cart/payment.php'>Purchcase</a></p>
 
 <p>Total Price: <?php echo $totalPrice; ?></p>
 
