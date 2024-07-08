@@ -31,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="identifier" id="identifier" name="identifier" required>
     </div>
     <div>
-        <label for="password">Password:</label>
+        <label for="password">Password:</label> 
         <input type="password" id="password" name="password" required>
     </div>
     <button type="submit">Login</button>
 </form>
+
+<p><a href='/register.php'>Register</a></p>
 
 <?php include 'includes/footer.php'; ?>

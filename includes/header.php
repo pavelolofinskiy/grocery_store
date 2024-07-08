@@ -11,6 +11,6 @@
         </ul>
     </nav>
     <div class="user-actions">
-        <a href="/cart">Cart</a>
+        <a href="/cart/view.php">Cart</a>
     </div>
 </header>

@@ -42,5 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <button type="submit">Register</button>
 </form>
+<p><a href='/login.php'>Login</a></p>
 
 <?php include 'includes/footer.php'; ?>
