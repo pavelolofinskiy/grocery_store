@@ -1,10 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .ecommerce-footer {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+
+.footer-section {
     background-color: #F7F7F8;
 }
 
 .ecommerce-footer p {
     font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--main-font-family);
     color: #000;
     font-weight: 700;
 }
@@ -12,7 +27,7 @@
 .ecommerce-footer a {
     text-decoration: none;
     color: #777777;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--main-font-family);
     font-size: 14px;
 
 }
@@ -23,14 +38,53 @@
 
 .contact p {
     font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--main-font-family);
     color: #777777;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
-.element img {
-    width: 20px;
+.logo-p {
+    margin-bottom: 2rem;
 }
+
+.contact img {
+    margin-right: 4rem;
+}
+
+.links a {
+    margin-top: 100px;
+}
+
+.element {
+    display: flex;
+    margin-top: 1.125rem;
+}
+
+.element img{
+    width: 17px;
+    height: 23px;
+}
+
+.element:nth-of-type(3) img{
+    width: 20px;
+    height: 20px;
+}
+
+.element:nth-of-type(4) img{
+    width: 20px;
+    height: 22px;
+}
+
+.element p {
+    margin-left: 0;
+}
+
+.img-container {
+    width: 40px;
+}
+
 
 input {
     height: 32px;
@@ -38,5 +92,88 @@ input {
 }
 
 .subscription img {
-    width: 35px;
+    width: 40px;
+    margin-right: 0.5rem;
 }
+
+.rights {
+    text-align: center;
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid #E9E9E9;
+}
+
+.contact {
+    width: 34%;
+    padding: 15px;
+    padding-right: 40px;
+}
+
+.footer-nav {
+    width: 22%;
+    padding: 15px;
+    margin-top: 1.4rem;
+}
+
+.footer-categories {
+    width: 22%;
+    padding: 15px;
+    margin-top: 1.4rem;
+}
+
+.subscription {
+    width: 22%;
+    padding: 15px;
+    margin-top: 1.4rem;
+}
+
+.spacing {
+    margin-top: 1.5rem;
+}
+
+.spacing li {
+    margin-bottom: 1.125rem;
+}
+
+@media (width <= 760px) {
+    .contact {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-nav {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-categories {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+    
+    .subscription {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+  }
+  
+
+  @media (width <= 460px) {
+    .contact {
+        width: 100%;
+    }
+    
+    .footer-nav {
+        width: 100%;
+    }
+    
+    .footer-categories {
+        width: 100%;
+    }
+    
+    .subscription {
+        width: 100%;
+    }
+  }
+  
