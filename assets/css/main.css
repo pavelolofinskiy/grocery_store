@@ -3,6 +3,14 @@
     src: url('/assets/fonts/Poppins-Medium.ttf');
 }
 
+@font-face {
+    font-family: 'LightPoppins';
+    src: url('/assets/fonts/Poppins-Light.ttf');
+}
+
+
 :root {
     --main-font-family: 'Poppins', sans-serif;
+    --light-font-family: 'LightPoppins', sans-serif;
+    --main-background-color: #F7F7F8; 
 }
