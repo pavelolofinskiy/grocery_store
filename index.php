@@ -19,7 +19,6 @@ if (isset($_SESSION['user_id'])) {
     $username = $_SESSION['username'];
     echo "<p>Welcome, $username! <a href='logout.php'>Logout</a></p>";
 } else {
-
     echo "<p>Welcome, Guest! <a href='login.php'>Login</a> or <a href='register.php'>Register</a></p>";
 }
 ?>
