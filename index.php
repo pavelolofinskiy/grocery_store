@@ -4,26 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML Script</title>
+    <title>Food Trove</title>
     <link rel="stylesheet" href="assets\css\main.css">
+    <link rel="stylesheet" href="assets\css\hero.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <?php
+<?php
 session_start();
-
-if (isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-    $username = $_SESSION['username'];
-    echo "<p>Welcome, $username! <a href='logout.php'>Logout</a></p>";
-} else {
-    echo "<p>Welcome, Guest! <a href='login.php'>Login</a> or <a href='register.php'>Register</a></p>";
-}
 ?>
 
-<p><a href='products/list.php'>Products</a></p>
+<main>
+    <div class='text'>
+        <div class='text-div'>
+            <div class='first-text'>
+             <p class='first-text-percent'>100%</p>
+             <p class='first-text-second'>Organic Vegetables</p>
+            </div>
+            <p class='general-text'>The best way to <br>
+            stuff your wallet.</p>
+            <p class='second-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet<br>
+            reiciendis beatae consequuntur.</p>
+            <a class='button'>Shop now</a>
+        </div>
+        <div>
+            <img src="assets/img/hero-item.png"> 
+        </div>
+    </div>
+</main>
 
 
 </body>

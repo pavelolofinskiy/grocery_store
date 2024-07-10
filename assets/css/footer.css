@@ -15,6 +15,7 @@
 
 .footer-section {
     background-color: #F7F7F8;
+    z-index: 10;
 }
 
 .ecommerce-footer p {

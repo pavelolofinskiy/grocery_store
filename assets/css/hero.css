@@ -1,0 +1,84 @@
+main {
+    height: 45rem;
+    background-image: url(/assets/img/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;   
+}
+
+.text-div {
+    padding: 0 15px;
+}
+
+.text img {
+    margin-top: 15rem;
+    height: 484px;
+    width: 574px;
+}
+
+.first-text {
+    display: flex;
+}
+
+.first-text-percent {
+    font-family: var(--main-font-family);
+    font-weight: 900;
+    color: #F53E32;
+}
+
+.first-text-second {
+    font-family: var(--main-font-family);
+    font-weight: 900;
+    margin-left: 0.4rem;
+}
+
+.general-text {
+    font-size: 3rem;
+    font-family: var(--bold-font-family);
+    font-weight: 900;
+}
+
+.second-text {
+    font-family: var(--main-font-family);
+    color: #7A7A7A;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.button {
+    background-color: #F53E32;
+    border-radius: 5px;
+    color: #fff;
+    font-family: var(--main-font-family);
+    padding: 14px 22px;
+    cursor: pointer;
+}
+
+@media (max-width: 1060px) {
+    .text img {
+        height: 484px;
+        width: 45vw;
+        margin-top: 15rem;
+    }
+}
+
+@media (max-width: 840px) {
+    .text img {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .general-text {
+        font-size: 10vw;
+    }
+}

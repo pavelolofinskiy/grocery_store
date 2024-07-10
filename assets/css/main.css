@@ -8,9 +8,14 @@
     src: url('/assets/fonts/Poppins-Light.ttf');
 }
 
+@font-face {
+    font-family: 'BoldPoppins';
+    src: url('/assets/fonts/Poppins-Bold.ttf');
+}
 
 :root {
     --main-font-family: 'Poppins', sans-serif;
     --light-font-family: 'LightPoppins', sans-serif;
+    --bold-font-family: 'BoldPoppins', sans-serif;
     --main-background-color: #F7F7F8; 
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="header-section">
         <div class='header-shadow'>
@@ -29,10 +30,10 @@
         </div>
         <div class='search-container'>
             <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="logo">
-            <form class=input-form>
-                <input type="text" placeholder="Search for items...">
+            <form class=input-form action="/products/search.php" method="GET">
+                <input type="text" id='name' name='name' placeholder="Search for items...">
                 <button>
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" href=''></i>
                 </button>
             </form>
             <div class="user-actions">
