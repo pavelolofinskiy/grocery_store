@@ -13,9 +13,15 @@
     src: url('/assets/fonts/Poppins-Bold.ttf');
 }
 
+@font-face {
+    font-family: 'QuickSand';
+    src: url('/assets/fonts/Quicksand-Medium.ttf');
+}
+
 :root {
     --main-font-family: 'Poppins', sans-serif;
     --light-font-family: 'LightPoppins', sans-serif;
     --bold-font-family: 'BoldPoppins', sans-serif;
+    --second-font-family: 'QuickSand', sans-serif;
     --main-background-color: #F7F7F8; 
 }

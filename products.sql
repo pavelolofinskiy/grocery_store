@@ -10,3 +10,17 @@ VALUES
 ('Women\'s Skirt', 'Floral print skirt for women', 34.95),
 ('Men\'s Polo Shirt', 'Stylish polo shirt for men', 29.99),
 ('Women\'s Jeans', 'Slim fit jeans for women', 54.99);
+
+
+INSERT INTO products (name, description, price, created_at)
+VALUES
+    ('Apple', 'Fresh red apple', 0.50, NOW()),
+    ('Banana', 'Ripe yellow bananas', 0.30, NOW()),
+    ('Milk', '1-liter whole milk', 1.20, NOW()),
+    ('Bread', 'Whole grain bread', 2.50, NOW()),
+    ('Carrot', 'Fresh organic carrots', 0.80, NOW()),
+    ('Eggs', 'Dozen large eggs', 3.50, NOW()),
+    ('Cheese', 'Cheddar cheese block', 4.75, NOW()),
+    ('Tomato', 'Juicy red tomatoes', 1.00, NOW()),
+    ('Potato', 'Russet potatoes', 0.60, NOW()),
+    ('Chicken', 'Fresh chicken breast', 5.50, NOW());

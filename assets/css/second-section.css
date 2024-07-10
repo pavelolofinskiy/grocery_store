@@ -1,0 +1,131 @@
+section {
+    margin-top: 4rem;
+    height: 40rem;
+    padding: 0 15px;
+}
+
+.banners {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    max-width: 1180px;
+}
+
+.first-banner img {
+    width: clamp(2rem, 30vw, 380px);
+}
+
+.second-banner img {
+    width: clamp(2rem, 30vw, 380px);
+}
+
+.third-banner img {
+    width: clamp(2rem, 30vw, 380px);
+}
+
+.first-banner {
+    position: relative;
+}
+
+.second-banner {
+    position: relative;
+}
+
+.third-banner {
+    position: relative;
+}
+
+.first-p {
+    position: absolute;
+    top:0;
+    font-family: var(--second-font-family);
+    font-size: clamp(0.3rem, 1.8vw, 1.1rem);
+    font-weight: 900;
+    color: #253D4E;
+    left: 0;
+    margin-left: clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(1rem, 4vw, 3rem);
+}
+
+.second-button {
+    position: absolute;
+    background-color: #F53E32;
+    border-radius: 5px;
+    color: #fff;
+    font-family: var(--main-font-family);
+    font-size: clamp(0.1rem, 1vw, 0.8rem);
+    padding: clamp(0.1rem, 1vw, 8px) clamp(0.1rem, 1vw, 15px);
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    margin-top: clamp(1rem, 12vw, 9rem);
+    margin-left: clamp(1rem, 3vw, 2rem);
+}
+
+@media (max-width: 800px) {
+
+    .third-banner {
+        display: none;
+    }
+
+    .first-banner img {
+        width: clamp(2rem, 46vw, 380px);
+    }
+    
+    .second-banner img {
+        width: clamp(2rem, 46vw, 380px);
+    }
+
+    section {
+        margin-top: 3rem;
+    }
+
+    .first-p {
+        font-size: clamp(0.3rem, 3vw, 1.1rem);
+    }
+
+    .second-button {
+        font-size: clamp(0.1rem, 1.8vw, 0.8rem);
+        padding: clamp(0.1rem, 1.5vw, 8px) clamp(0.1rem, 2vw, 15px);
+        margin-top: clamp(1rem, 18vw, 9rem);
+        margin-left: clamp(1rem, 3vw, 2rem);
+    }
+}
+
+@media (max-width: 500px) {
+
+    .third-banner {
+        display: none;
+    }
+
+    .first-banner img {
+        width: 94vw;
+    }
+    
+    .second-banner {
+        display: none;
+    }
+
+    .first-banner {
+        padding-left: 3vw;
+    }
+
+
+    section {
+        margin-top: 3rem;
+        padding: 0 0;
+    }
+
+    .first-p {
+        font-size: 6vw;
+        margin-left: clamp(1rem, 6vw, 10rem);
+        margin-top: clamp(1rem, 11vw, 9rem);
+    }
+
+    .second-button {
+        font-size: 3vw;
+        padding: clamp(0.1rem, 1.5vw, 8px) clamp(0.1rem, 2vw, 15px);
+        margin-top: 42vw;
+        margin-left: clamp(1rem, 6vw, 10rem);
+    }
+}
