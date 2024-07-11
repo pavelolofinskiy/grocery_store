@@ -1,6 +1,6 @@
 .second-section {
     margin-top: 4rem;
-    height: 18rem;
+    height: clamp(10rem ,25vw ,18rem);
     padding: 0 15px;
 }
 
@@ -76,8 +76,9 @@
         width: clamp(2rem, 46vw, 380px);
     }
 
-    section {
+    .second-section {
         margin-top: 3rem;
+        height: clamp(10rem ,32vw ,16rem);
     }
 
     .first-p {
@@ -99,7 +100,7 @@
     }
 
     .first-banner img {
-        width: 94vw;
+        width: 92vw;
     }
     
     .second-banner {
@@ -107,13 +108,14 @@
     }
 
     .first-banner {
-        padding-left: 3vw;
+        padding-left: 4vw;
     }
 
 
-    section {
+    .second-section {
         margin-top: 3rem;
         padding: 0 0;
+        height: 18rem;
     }
 
     .first-p {

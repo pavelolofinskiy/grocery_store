@@ -17,10 +17,10 @@
                 <nav class="main-nav">
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="/category">Category</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/pages">Pages</a></li>
-                        <li><a href="/elements">Elements</a></li>
+                        <li><a href="/">Category</a></li>
+                        <li><a href="/products/list.php">Products</a></li>
+                        <li><a href="/">Pages</a></li>
+                        <li><a href="/">Elements</a></li>
                     </ul>
                 </nav>
                 <div class="contact-info">

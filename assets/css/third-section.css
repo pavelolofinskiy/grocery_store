@@ -1,14 +1,25 @@
+.grid-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 13px;
+}
 
+.general-grid-p {
+    font-family: var(--second-font-family-bold);
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 20px;
+    padding: 20px 0;
     background-color: #fff;
     max-width: 1200px;
     margin: auto;
-    margin-bottom: 5rem;
+    margin-bottom: 1rem;
 }
 
 .product-card {
@@ -58,7 +69,7 @@
 .price-div {
     display: flex;
     justify-content: space-between;
-    align-items: end;
+    align-items: center;
     margin-top: 1rem;
 }
 
@@ -66,4 +77,14 @@
     font-family: var(--second-font-family-bold);
     width: 900;
     color: #3BB77E;
+    margin-top: 0.7rem;
+}
+
+.price-div button {
+    font-family: var(--second-font-family-bold);
+    width: 900;
+}
+
+.product-card i {
+    margin-right: 0.3rem;
 }
