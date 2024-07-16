@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets\css\second-section.css">
     <link rel="stylesheet" href="assets\css\third-section.css">
     <link rel="stylesheet" href="assets\css\fourth-section.css">
+    <link rel="stylesheet" href="assets\css\fifth-section.css">
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -197,6 +198,23 @@ session_start();
                 <p class="sold">Sold: 90/120</p>
                 <button>Add To Cart</button>
             </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class='background'>
+        <div>
+            <p class='background-general-p'>Stay home & get your daily<br>
+            needs from our shop</p>
+            <p class='background-second-p'>Start You'r Daily Shopping with Foodtrove</p>
+            <form class="form-container">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div>
+            <img src="assets/img/second-image.png"> 
         </div>
     </div>
 </section>

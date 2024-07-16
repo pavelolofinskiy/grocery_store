@@ -2,6 +2,7 @@
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    margin-bottom: 2rem;
 }
 
 .grid-container {
@@ -18,7 +19,6 @@
     border-radius: 8px;
     text-align: left;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .fixed-item img {
@@ -45,12 +45,13 @@
     padding: 10px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .second-product-card img {
-    width: 100%;
-    height: auto;
+    width: 180px;
+    height: 180px;
+    align-self: center;
 }
 
 .second-product-card h3 {
@@ -89,7 +90,6 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .button:hover {
@@ -184,6 +184,24 @@
         display:none;
     }
 
+    .second-product-card img {
+        margin-bottom: 0.5rem;
+    }
+
+    .price {
+        margin-bottom: 0.5rem;
+    }
+
+    .cart-name {
+        margin-bottom: 0.5rem;
+    }
+
+    .second-product-card button {
+        margin-top: 0.5rem;
+    }
+
+
+
 }
 
 @media (max-width: 440px) {
@@ -198,6 +216,24 @@
 
     .grid-container > :nth-child(4) {
         display:none;
+    }
+
+    .second-product-card img {
+        margin-bottom: 0.3rem;
+        width: 250px;
+        height: 250px;
+    }
+
+    .price {
+        margin-bottom: 1rem;
+    }
+
+    .cart-name {
+        margin-bottom: 1rem;
+    }
+
+    .second-product-card button {
+        margin-top: 1rem;
     }
 
 }

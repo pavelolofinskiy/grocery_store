@@ -1,0 +1,121 @@
+.background {
+    background-image: url(/assets/img/email.png);
+    height: 417px;
+    width: 100%;
+    max-width: 1160px;
+    margin: auto;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.background-general-p {
+    font-family: var(--second-font-family-bold);
+    font-weight: 500;
+    font-size: 40px;
+    position: absolute;
+    top:0;
+    margin-top: 5rem;
+    color: #253D4E;
+}
+
+.background-second-p {
+    font-family: var(--second-font-family);
+    font-size: 18px;
+    position: absolute;
+    color: #7E7E7E;
+}
+
+.background img {
+    position: relative;
+    height: 15rem;
+    width: 28rem;
+    margin-top: 11.2rem;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: absolute;
+    margin-top: 3rem;
+    width: 30rem;
+    z-index: 1;
+    height: 60px;
+    outline: none !important;
+}
+
+.form-container input {
+    border: none;
+    padding: 15px 20px;
+    flex: 1;
+    outline: none !important;
+    border-radius: 50px 0 0 50px;
+    font-size: 16px;
+    font-family: var(--second-font-family);
+}
+
+.form-container button {
+    background-color: #F53E32;
+    color: white;
+    border: none;
+    padding: 21px 30px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: var(--second-font-family);
+}
+
+.form-container button:hover {
+    background-color: #e1392d;
+}
+
+@media (max-width: 930px) {
+    .form-container {
+        width: 45%;
+    }
+    
+}
+
+@media (max-width: 826px) {
+    .form-container {
+        width: 30rem;
+    }
+
+    .background img {
+        display: none;
+    }
+    
+}
+
+@media (max-width: 560px) {
+    .form-container {
+        width: 90%;
+    }
+
+    .background img {
+        display: none;
+    }
+
+    .background-general-p {
+        font-size: 7vw;
+    }
+
+    .background-second-p {
+        font-size: 3.4vw;
+    }
+    
+}
+
+@media (max-width: 430px) {
+    .background-general-p {
+        margin-top: 7rem;
+    }
+}
