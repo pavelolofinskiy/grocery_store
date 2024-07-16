@@ -77,12 +77,24 @@
     background-color: #e1392d;
 }
 
+@media (max-width: 1200px) {
+    .background {
+        width: 96%;
+    }
+    
+}
+
 @media (max-width: 930px) {
     .form-container {
         width: 45%;
     }
+
+    .background {
+        width: 95%;
+    }
     
 }
+
 
 @media (max-width: 826px) {
     .form-container {
@@ -91,6 +103,14 @@
 
     .background img {
         display: none;
+    }
+
+    .background {
+        width: 94%;
+    }
+
+    .background-general-p {
+        font-size: 6vw;
     }
     
 }
@@ -105,17 +125,25 @@
     }
 
     .background-general-p {
-        font-size: 7vw;
+        font-size: 6vw;
     }
 
     .background-second-p {
         font-size: 3.4vw;
+    }
+
+    .background {
+        width: 92%;
     }
     
 }
 
 @media (max-width: 430px) {
     .background-general-p {
-        margin-top: 7rem;
+        margin-top: 9rem;
+    }
+
+    .background {
+        width: 90%;
     }
 }

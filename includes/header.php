@@ -31,7 +31,7 @@
         <div class='search-container'>
             <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="logo">
             <form class=input-form action="/products/search.php" method="GET">
-                <input type="text" id='item_name' name='item_name' value='Apple' placeholder="Search for items...">
+                <input type="text" id='item_name' name='item_name' placeholder="Search for items...">
                 <button>
                     <i class="fas fa-search" href=''></i>
                 </button>
