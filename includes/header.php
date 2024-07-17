@@ -12,7 +12,7 @@
         <div class='header-shadow'>
             <div class="header-container">
                 <div class="logo-menu">
-                        <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
+                    <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
                 </div>
                 <nav class="main-nav">
                     <ul>
@@ -30,11 +30,13 @@
         </div>
         <div class='search-container'>
             <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="logo">
-            <form class=input-form action="/products/search.php" method="GET">
+            <img src="/assets/img/logo2.png" alt="FoodTrove Logo" class="logo2">
+            <form autocomplete="off" class="input-form" action="/products/end_search.php" method="GET">
                 <input type="text" id='item_name' name='item_name' placeholder="Search for items...">
                 <button>
-                    <i class="fas fa-search" href=''></i>
+                    <i class="fas fa-search"></i>
                 </button>
+                <div class='results' id="results"></div>    
             </form>
             <div class="user-actions">
                 <img class='img2' src='/assets/img/account.png'>
@@ -42,7 +44,36 @@
                 <img class='img3' src='/assets/img/cart.png'>
                 <a href="/cart">Cart</a>
             </div>
+            <div class="logo-menu2">
+                    <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
+            </div>
         </div>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('item_name');
+            const resultsDiv = document.getElementById('results');
+
+            searchInput.addEventListener('keyup', function() {
+                const query = searchInput.value;
+                if (query.length > 0) { 
+                    fetch('/products/search.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: 'query=' + encodeURIComponent(query)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        resultsDiv.innerHTML = data;
+                    });
+                } else {
+                    resultsDiv.innerHTML = '';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

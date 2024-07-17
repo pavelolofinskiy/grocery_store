@@ -1,4 +1,5 @@
 <?php
+include '../includes/header.php';
 include '../includes/db.php';
 
 $productId = $_GET['id'];
@@ -31,4 +32,7 @@ if ($product):
 else:
     echo "Product not found.";
 endif;
+
+include '../includes/footer.php';
 ?>
+
