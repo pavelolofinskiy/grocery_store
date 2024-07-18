@@ -8,6 +8,9 @@
 </head>
 
 <body>
+    <div class="overlay" id='overlay'></div> 
+
+    
     <header class="header-section">
         <div class='header-shadow'>
             <div class="header-container">
@@ -25,8 +28,8 @@
                 </nav>
                 <div class="contact-info">
                     <span>+123 ( 456 ) ( 7890 )</span>
-                </div> 
-            </div> 
+                </div>
+            </div>
         </div>
         <div class='search-container'>
             <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="logo">
@@ -36,7 +39,7 @@
                 <button>
                     <i class="fas fa-search"></i>
                 </button>
-                <div class='results' id="results"></div>    
+                <div class='results' id="results"></div>
             </form>
             <div class="user-actions">
                 <img class='img2' src='/assets/img/account.png'>
@@ -45,7 +48,7 @@
                 <a href="/cart/view.php">Cart</a>
             </div>
             <div class="logo-menu2">
-                    <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
+                <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
             </div>
         </div>
     </header>

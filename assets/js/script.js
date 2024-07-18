@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const resultsDiv = document.getElementById('results');
     let lastQuery = '';
 
+
     function performSearch(query) {
         fetch('/products/search.php', {
             method: 'POST',
@@ -18,17 +19,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
     searchInput.addEventListener('keyup', function() {
         const query = searchInput.value;
         if (query.length > 0) {
             performSearch(query);
             lastQuery = query; 
         } else {
-            resultsDiv.innerHTML = '';
-            lastQuery = '';
-            resultsDiv.style.display = 'none';
+            resultsDiv.innerHTML = 0;
+            lastQuery = 0;
+            resultsDiv.style.display = 'none'; 
         }
     });
+
 
     document.addEventListener('click', function(event) {
         if (!document.querySelector('.search-container').contains(event.target)) {
@@ -41,4 +44,22 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch(lastQuery);
         }
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchContainer = document.querySelector('.input-form');
+    const overlay = document.getElementById('overlay');
+
+    searchContainer.addEventListener('focusin', function() {
+        overlay.classList.add('active');
+        searchContainer.classList.remove('focus-without');
+        searchContainer.classList.add('focus-within');
+    });
+
+    searchContainer.addEventListener('focusout', function() {
+        overlay.classList.remove('active');
+        searchContainer.classList.remove('focus-within');
+        searchContainer.classList.add('focus-without');
+    });
+
 });
