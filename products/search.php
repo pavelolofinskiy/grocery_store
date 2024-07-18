@@ -12,8 +12,11 @@ $stmt->execute(['%' . $query . '%']);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-foreach ($results as $result) {
-    echo '<div class="result-item"><a href="/products/product_view.php?id=' . $result['id'] . '">' . htmlspecialchars($result['name']) . '</a></div>';
+if (empty($results)) {
+    echo '<div class="result-item"><a href="/products/list.php"> No results found. Go to products page. </a></div>';
+} else {
+    foreach ($results as $result) {
+        echo '<div class="result-item"><a href="/products/product_view.php?id=' . $result['id'] . '">' . htmlspecialchars($result['name']) . '</a></div>';
+    }
 }
-
 ?>

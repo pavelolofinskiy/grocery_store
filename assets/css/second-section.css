@@ -60,6 +60,11 @@
     left: 0;
     margin-top: clamp(1rem, 12vw, 9rem);
     margin-left: clamp(1rem, 3vw, 2rem);
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.second-button:hover {
+    background-color: var(--hover-button-color);
 }
 
 @media (max-width: 800px) {

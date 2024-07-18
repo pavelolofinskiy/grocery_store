@@ -42,7 +42,7 @@
                 <img class='img2' src='/assets/img/account.png'>
                 <a href="/account">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
-                <a href="/cart">Cart</a>
+                <a href="/cart/view.php">Cart</a>
             </div>
             <div class="logo-menu2">
                     <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
@@ -50,30 +50,6 @@
         </div>
     </header>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('item_name');
-            const resultsDiv = document.getElementById('results');
-
-            searchInput.addEventListener('keyup', function() {
-                const query = searchInput.value;
-                if (query.length > 0) { 
-                    fetch('/products/search.php', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded'
-                        },
-                        body: 'query=' + encodeURIComponent(query)
-                    })
-                    .then(response => response.text())
-                    .then(data => {
-                        resultsDiv.innerHTML = data;
-                    });
-                } else {
-                    resultsDiv.innerHTML = '';
-                }
-            });
-        });
-    </script>
+    <script src='/assets/js/script.js'></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +18,6 @@
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<?php
-session_start();
-?>
 
 <main>
     <div class='text'>
@@ -219,8 +220,8 @@ session_start();
     </div>
 </section>
 
-
-
+<?php include 'includes/footer.php'; ?>
 </body>
 </html>
-<?php include 'includes/footer.php'; ?>
+
+

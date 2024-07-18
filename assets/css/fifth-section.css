@@ -70,10 +70,11 @@
     border-radius: 50px;
     font-size: 16px;
     font-family: var(--second-font-family);
+    transition: background-color 0.3s ease-out;
 }
 
 .form-container button:hover {
-    background-color: #e1392d;
+    background-color: var(--hover-button-color);
 }
 
 @media (max-width: 1200px) {

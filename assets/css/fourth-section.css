@@ -83,18 +83,21 @@
 }
 
 .grid-container button {
-    background-color: #e93b2e;
+    background-color: var(--button-color);
     font-family: var(--second-font-family-bold);
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.button:hover {
-    background-color: #d6362b;
+.grid-container button:hover {
+    background-color: var(--hover-button-color);
 }
+
+
 
 
 .save {

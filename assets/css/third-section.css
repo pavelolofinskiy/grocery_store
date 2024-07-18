@@ -54,10 +54,11 @@
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10px;
+    transition: background-color 0.2s ease-out, transform 0.3s ease-out;
 }
 
 .product-card button:hover {
-    background-color: #e93b2e;
+    background-color: var(--hover-button-color);
 }
 
 .product-p {
