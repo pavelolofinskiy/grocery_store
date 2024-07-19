@@ -1,0 +1,130 @@
+.info-div {
+    background-color: var(--button-color);
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+
+.info-div-p {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.info-div p {
+    color: #fff;
+    font-family: var(--main-font-family);
+    padding-left: 14px;
+    font-size: 1.2rem;
+}
+
+.login-section {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    border: #E9E9E9 solid;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.login-form button {
+    background-color: #F53E32;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.2s ease-out;
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.login-form button:hover {
+    background-color: var(--hover-button-color);
+}
+
+
+.login-email-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.login-email-div input {
+    border: #E9E9E9 solid;
+    border-width: 2px;
+    border-radius: 5px;
+    height: 50px;
+    font-family: var(--main-font-family);
+    color: #444444;
+    font-size: 1.2rem;
+}
+
+.login-email-div label {
+    font-family: var(--main-font-family);
+    color: #444444;
+    margin-bottom: 0.3rem;
+
+}
+
+.login-password-div input {
+    border: #E9E9E9 solid;
+    border-width: 2px;
+    border-radius: 5px;
+    height: 50px;
+    font-family: var(--main-font-family);
+    color: #444444;
+    font-size: 1.2rem;
+}
+
+.login-password-div label {
+    font-family: var(--main-font-family);
+    color: #444444;
+    margin-bottom: 0.3rem;
+}
+
+.login-password-div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.login-logo-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.button-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.button-div p {
+    margin-top: 1.8rem;
+}
+
+.button-div p a{
+    margin-right: 2rem;
+    font-family: var(--main-font-family);
+    color: #777777;
+    text-decoration: none;
+}

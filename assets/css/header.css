@@ -51,24 +51,26 @@
     border: solid 2px;
     border-color: #64B496;
     border-radius: 5px;
+    width: 28rem;
 }
 
 .input-form {
     align-content: center;
     border-radius: 5px;
     position: relative;
+    margin-left: 4.7rem;
 }
 
 .input-form button {
-    position: relative;
-    height: 46px;
+    position: absolute;
+    height: 45.5px;
     width: 42px;
     border-style: none;
     border-radius: 0 5px 5px 0;
     margin: 0;
     padding: 0;
-    top: -0.8px;
-    right: 10px;
+    top: 0;
+    right: 0;
     background-color: #64B496;
     cursor: pointer;
 }
