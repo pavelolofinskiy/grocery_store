@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'includes/header.php';
 include 'includes/db.php';
 
@@ -23,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
             $stmt = $pdo->prepare($sql);
             if ($stmt->execute([$email, $password])) {
-                echo '<p>Registration successful! <a href="login.php">Login here</a></p>';
+                $_SESSION['user_id'] = $pdo->lastInsertId();
+                header('Location: /index.php');
             } else {
                 echo '<p>Registration failed</p>';
             }
@@ -33,19 +35,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 <h2>Register</h2>
-<form action="register.php" method="post">
+<form id="registerForm" action="register.php" method="post">
     <div>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" value='myemail@gmail.com' required>
     </div>
     <div>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <label for="password">Confirm password:</label>
-        <input type="password2" id="password2" name="password2" required>
+        <input type="password" id="password" name="password" value='5504717AA' required>
+    </div>
+    <div>
+        <label for="password2">Confirm password:</label>
+        <input type="password" id="password2" name="password2" value='5504717AA'  required>
     </div>
     <button type="submit">Register</button>
+    <p id="error-message" style="color: red;"></p>
 </form>
 <p><a href='/login.php'>Login</a></p>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', function(event) {
+    const password = document.getElementById('password').value;
+    const password2 = document.getElementById('password2').value;
+    const errorMessage = document.getElementById('error-message');
+
+    if (password !== password2) {
+        event.preventDefault();
+        errorMessage.textContent = 'Passwords do not match';
+    }
+});
+</script>
 
 <?php include 'includes/footer.php'; ?>
