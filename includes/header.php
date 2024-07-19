@@ -9,8 +9,6 @@
 
 <body>
     <div class="overlay" id='overlay'></div> 
-
-    
     <header class="header-section">
         <div class='header-shadow'>
             <div class="header-container">
@@ -43,7 +41,7 @@
             </form>
             <div class="user-actions">
                 <img class='img2' src='/assets/img/account.png'>
-                <a href="/account">Account</a>
+                <a href="/logout.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
                 <a href="/cart/view.php">Cart</a>
             </div>
