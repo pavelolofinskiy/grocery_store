@@ -1,7 +1,7 @@
 .info-div {
     background-color: var(--button-color);
     display: flex;
-    align-items: center;    
+    align-items: center;
     height: 4rem;
 }
 
@@ -20,12 +20,12 @@
     font-size: 1.2rem;
 }
 
-.login-section {
+.register-section {
     display: flex;
     justify-content: center;
 }
 
-.login-form {
+.register-form {
     border: #E9E9E9 solid;
     border-width: 2px;
     border-radius: 5px;
@@ -33,7 +33,7 @@
     margin-bottom: 6rem;
 }
 
-.login-form button {
+.register-form button {
     background-color: #F53E32;
     color: #fff;
     border: none;
@@ -49,12 +49,12 @@
 
 }
 
-.login-form button:hover {
+.register-form button:hover {
     background-color: var(--hover-button-color);
 }
 
 
-.login-email-div {
+.register-email-div {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
@@ -62,7 +62,7 @@
     margin-right: 2rem;
 }
 
-.login-email-div input {
+.register-email-div input {
     border: #E9E9E9 solid;
     border-width: 2px;
     border-radius: 5px;
@@ -72,14 +72,14 @@
     font-size: 1.2rem;
 }
 
-.login-email-div label {
+.register-email-div label {
     font-family: var(--main-font-family);
     color: #444444;
     margin-bottom: 0.3rem;
 
 }
 
-.login-password-div input {
+.register-password-div input {
     border: #E9E9E9 solid;
     border-width: 2px;
     border-radius: 5px;
@@ -89,13 +89,13 @@
     font-size: 1.2rem;
 }
 
-.login-password-div label {
+.register-password-div label {
     font-family: var(--main-font-family);
     color: #444444;
     margin-bottom: 0.3rem;
 }
 
-.login-password-div {
+.register-password-div {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
@@ -103,7 +103,7 @@
     margin-right: 2rem;
 }
 
-.login-logo-div {
+.register-logo-div {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
@@ -139,20 +139,20 @@
 
 @media (max-width: 514px) {
 
-    .login-section {
+    .register-section {
         padding: 0 17px;
     }
 
-    .login-form {
+    .register-form {
         width: 100%;
     }
 
-    .login-email-div input {
+    .register-email-div input {
         width: 100%;
     }
     
     
-    .login-password-div input {
+    .register-password-div input {
         width: 100%;
     }
 

@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-
+<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <section class='login-section'>
         <form id="loginForm" class='login-form' action="login.php" method="post">
             <div class='login-logo-div'>
-                <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="logo">
+                <img src="/assets/img/logo.png" alt="FoodTrove Logo" class="2logo">
             </div>
             <div class='login-email-div'>
                 <label for="identifier">Email:</label>
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="password">Password:</label> 
                 <input type="password" id="password" name="password" required>
             </div>
-            <p id="error-message" style="color: red;"></p>
+            <p id="error-message" class='error-message'></p>
             <div class='button-div'>
                 <button type="submit">Login</button>
                 <p><a href='/register.php'>Signup?</a></p>

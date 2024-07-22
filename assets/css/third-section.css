@@ -9,6 +9,12 @@
     font-weight: 500;
     font-size: 2rem;
     margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.product-card-link {
+    text-decoration: none;
+    display: block;
 }
 
 .product-grid {
@@ -44,6 +50,7 @@
 
 .product-card p {
     color: #555;
+    text-decoration: none; 
 }
 
 .product-card button {
@@ -55,6 +62,7 @@
     border-radius: 5px;
     margin-top: 10px;
     transition: background-color 0.2s ease-out, transform 0.3s ease-out;
+    text-decoration: none; 
 }
 
 .product-card button:hover {

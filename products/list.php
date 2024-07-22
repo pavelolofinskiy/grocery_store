@@ -20,8 +20,8 @@ $products = $stmt->fetchAll();
 <div class="products">
     <?php foreach ($products as $product): ?>
         <div class="product">
+            <img src=<?php echo $product['img_link'];?> >
             <h3><?php echo $product['name']; ?></h3>
-            <p><?php echo $product['description']; ?></p>
             <p>Price: $<?php echo $product['price']; ?></p>
             <a href="/products/product_view.php?id=<?php echo $product['id']; ?>">View Product</a>
         </div>

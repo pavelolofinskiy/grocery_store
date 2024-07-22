@@ -43,7 +43,14 @@
                 <img class='img2' src='/assets/img/account.png'>
                 <a href="/logout.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
-                <a href="/cart/view.php">Cart</a>
+                <button id="cart-button">Cart</button>
+                <div id="cart-popup" class="popup">
+                <div class="popup-content">
+                    <span id="close-popup" class="close">&times;</span>
+                    <div id="cart-container">
+                    </div>
+                </div>
+    </div>
             </div>
             <div class="logo-menu2">
                 <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
