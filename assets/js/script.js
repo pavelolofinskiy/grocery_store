@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     fetch('/cart/view.php')
                         .then(response => response.text())
                         .then(html => {
-                            document.getElementById('cart-content').innerHTML = html;
-                            cartOverlay.style.display = 'block';
-                            cartPopup.style.display = 'flex';
+                            cartButton.addEventListener('click', function() {
+                                cartPopup.style.display = 'flex';
+                            });
                         });
                 } else {
                     window.location.href = '/main/login.php'; 

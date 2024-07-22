@@ -1,7 +1,10 @@
 <?php
 include __DIR__ . '/../includes/db.php';
 
+session_start();
+
 $userId = $_SESSION['user_id'];
+
 
 $sql = "SELECT cart.id, products.name, products.price, cart.quantity
         FROM cart
