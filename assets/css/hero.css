@@ -5,6 +5,14 @@ main {
     background-size: cover;
 }
 
+.div-fix {
+    height: 0.7rem;
+    background-color: #fff;
+    z-index: 500;
+    position: relative;
+
+}
+
 .text {
     display: flex;
     justify-content: space-between;
@@ -20,7 +28,7 @@ main {
 }
 
 .text img {
-    margin-top: 15rem;
+    margin-top: 13.5rem;
     height: 484px;
     width: 574px;
 }

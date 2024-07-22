@@ -30,7 +30,7 @@ function formatPrice($price) {
     <?php foreach ($cartItems as $item): ?>
         <div class="cart-item" data-id="<?php echo $item['id']; ?>">
             <h3><?php echo $item['name']; ?></h3>
-            <p>Price: $<?php echo formatPrice($item['price']); ?></p>  <!-- Format item price -->
+            <p>Price: $<?php echo formatPrice($item['price']); ?></p> 
             <p>Quantity: 
                 <button class="update-quantity" data-action="decrement">-</button>
                 <input type="number" class="quantity-input" value="<?php echo $item['quantity']; ?>" min="1">
@@ -43,7 +43,7 @@ function formatPrice($price) {
 <button onclick="history.back()">Back</button>
 <p><a href='/cart/payment.php'>Purchase</a></p>
 
-<p>Total Price: $<span id="total-price"><?php echo $totalPrice; ?></span></p>  <!-- Display formatted total price -->
+<p>Total Price: $<span id="total-price"><?php echo $totalPrice; ?></span></p>  
 
 
 <script>

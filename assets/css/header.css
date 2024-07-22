@@ -6,6 +6,8 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
+    z-index: 44;
+    position: relative;
 }
 
 .img {
@@ -39,6 +41,8 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
+    z-index: 55;
+    position: relative;
 }
 
 .search-container input {
@@ -52,6 +56,7 @@
     border-color: #64B496;
     border-radius: 5px;
     width: 30rem;
+    z-index: 55;
 }
 
 .input-form {
@@ -60,6 +65,7 @@
     position: relative;
     margin-left: 1rem;
     width: 27rem;
+    z-index: 55;
 }
 
 .input-form button {
@@ -74,10 +80,12 @@
     right: -3rem;
     background-color: #64B496;
     cursor: pointer;
+    z-index: 55;
 }
 
 .input-form i {
     color: #fff;
+    z-index: 55;
 }
 
 
@@ -88,6 +96,7 @@
     margin: 0;
     padding: 0;
     margin-left: 6.3rem;
+    z-index: 55;
 }
 
 .main-nav a {
@@ -96,6 +105,8 @@
     font-weight: 500;
     font-family: var(--main-font-family);
     margin-left: 1rem;
+    z-index: 1005;
+    position: relative;
 }
 
 .logo-menu img {
@@ -137,6 +148,7 @@
     margin-left: 1.5rem;
 }
 
+
 .results {
     position: absolute;
     background-color: #fff;
@@ -166,10 +178,18 @@
     display: none;
 }
 
+.header-section {
+    z-index: 1000;
+    position: relative;
+    background-color: #fff;
+    height: auto;
+}
+
+
 .input-form:focus-within,
 .input-form.focus-without {
     position: relative;
-    z-index: 2000;  
+    z-index: 100;  
 }
 
 .overlay {
@@ -177,16 +197,17 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 1000; 
     visibility: hidden;
     transition: 0.3s opacity ease, visibility 0ms ease-in 0.3s; /* Smooth fade effect */
     opacity: 0;
+    z-index: 100;
 }
 
 .overlay.active {
     visibility: visible;
     transition: 0.3s opacity ease; /* Smooth fade effect */
     opacity: 1;
+    z-index: 100;
 }
 
 @media (max-width: 894px) {

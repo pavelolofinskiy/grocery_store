@@ -46,7 +46,46 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const searchContainer = document.querySelector('.input-form');
+    const overlay = document.getElementById('overlay');
+
+    searchContainer.addEventListener('focusin', function() {
+        overlay.classList.add('active');
+        searchContainer.classList.remove('focus-without');
+        searchContainer.classList.add('focus-within');
+    });
+
+    searchContainer.addEventListener('focusout', function() {
+        overlay.classList.remove('active');
+        searchContainer.classList.remove('focus-within');
+        searchContainer.classList.add('focus-without');
+    });
+
+})
+
 // Load cart content into the popup
+document.addEventListener('DOMContentLoaded', function() {
+    var cartButton = document.getElementById('cart-button');
+    var cartPopup = document.getElementById('cart-popup');
+    var closePopup = document.getElementById('close-popup');
+
+    cartButton.addEventListener('click', function() {
+        cartPopup.style.display = 'flex';
+    });
+
+    closePopup.addEventListener('click', function() {
+        cartPopup.style.display = 'none';
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target === cartPopup) {
+            cartPopup.style.display = 'none';
+        }
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var cartButton = document.getElementById('cart-button');
     var cartPopup = document.getElementById('cart-popup');
@@ -58,13 +97,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(data => {
                 if (data.authenticated) {
-                    fetch('/cart/view.php')
-                        .then(response => response.text())
-                        .then(html => {
-                            cartButton.addEventListener('click', function() {
-                                cartPopup.style.display = 'flex';
-                            });
-                        });
+                    cartButton.addEventListener('click', function() {
+                        cartPopup.style.display = 'flex';
+                    });
                 } else {
                     window.location.href = '/main/login.php'; 
                 }

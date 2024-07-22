@@ -20,6 +20,7 @@
 
 
 <main>
+    <div class='div-fix'></div>
     <div class='text'>
         <div class='text-div'>
             <div class='first-text'>
