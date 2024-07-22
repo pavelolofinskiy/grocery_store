@@ -1,13 +1,5 @@
 <?php
-include '../includes/db.php';
-include '../includes/header.php';
-
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: /login.php');
-    exit;
-}
+include __DIR__ . '/../includes/db.php';
 
 $userId = $_SESSION['user_id'];
 
@@ -50,7 +42,6 @@ function formatPrice($price) {
 
 <p>Total Price: $<span id="total-price"><?php echo $totalPrice; ?></span></p>  <!-- Display formatted total price -->
 
-<?php include '../includes/footer.php'; ?>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {

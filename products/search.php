@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
 
 <?php
-include '../includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 
 $query = $_POST['query'];

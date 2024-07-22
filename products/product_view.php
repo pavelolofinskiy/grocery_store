@@ -1,6 +1,6 @@
 <?php
-include '../includes/header.php';
-include '../includes/db.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/db.php';
 
 $productId = $_GET['id'];
 
@@ -11,7 +11,7 @@ $product = $stmt->fetch();
 
 if ($product):
 ?>
-
+<link rel="stylesheet" href="/assets/css/cart_popup.css">
 <div class="cart">
     <div class="cart-item">
         <h3><?php echo $product['name']; ?></h3>
@@ -33,6 +33,6 @@ else:
     echo "Product not found.";
 endif;
 
-include '../includes/footer.php';
+include __DIR__ . '/../includes/footer.php';
 ?>
 

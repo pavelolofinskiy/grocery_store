@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/cart_popup.css">
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,7 +19,7 @@
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/main/index.php">Home</a></li>
                         <li><a href="/">Category</a></li>
                         <li><a href="/products/list.php">Products</a></li>
                         <li><a href="/">Pages</a></li>
@@ -41,16 +43,15 @@
             </form>
             <div class="user-actions">
                 <img class='img2' src='/assets/img/account.png'>
-                <a href="/logout.php">Account</a>
+                <a href="../main/logout.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
                 <button id="cart-button">Cart</button>
                 <div id="cart-popup" class="popup">
-                <div class="popup-content">
-                    <span id="close-popup" class="close">&times;</span>
-                    <div id="cart-container">
+                    <div class="popup-content" id="popup-content">
+                        <span class="close" id="close-popup">&times;</span>
+                        <?php include __DIR__ . '/../cart/view.php'; ?>
                     </div>
                 </div>
-    </div>
             </div>
             <div class="logo-menu2">
                 <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">

@@ -46,21 +46,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Load cart content into the popup
 document.addEventListener('DOMContentLoaded', function() {
-    const searchContainer = document.querySelector('.input-form');
-    const overlay = document.getElementById('overlay');
+    var cartButton = document.getElementById('cart-button');
+    var cartPopup = document.getElementById('cart-popup');
+    var closePopup = document.getElementById('close-popup');
+    var cartOverlay = document.getElementById('cartOverlay');
 
-    searchContainer.addEventListener('focusin', function() {
-        overlay.classList.add('active');
-        searchContainer.classList.remove('focus-without');
-        searchContainer.classList.add('focus-within');
+    function openCartPopup() {
+        fetch('auth_check.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.authenticated) {
+                    fetch('/cart/view.php')
+                        .then(response => response.text())
+                        .then(html => {
+                            document.getElementById('cart-content').innerHTML = html;
+                            cartOverlay.style.display = 'block';
+                            cartPopup.style.display = 'flex';
+                        });
+                } else {
+                    window.location.href = '/main/login.php'; 
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    cartButton.addEventListener('click', function() {
+        openCartPopup();
     });
 
-    searchContainer.addEventListener('focusout', function() {
-        overlay.classList.remove('active');
-        searchContainer.classList.remove('focus-within');
-        searchContainer.classList.add('focus-without');
+    closePopup.addEventListener('click', function() {
+        cartPopup.style.display = 'none';
+        cartOverlay.style.display = 'none';
     });
 
+    window.addEventListener('click', function(event) {
+        if (event.target === cartOverlay) {
+            cartPopup.style.display = 'none';
+            cartOverlay.style.display = 'none';
+        }
+    });
 });
-

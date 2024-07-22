@@ -1,5 +1,5 @@
 <?php
-include 'includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 session_start();
 
@@ -27,14 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<?php include 'includes/header.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/cart_popup.css">
 </head>
 <body>
     <div class='info-div'>
@@ -60,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p id="error-message" class='error-message'></p>
             <div class='button-div'>
                 <button type="submit">Login</button>
-                <p><a href='/register.php'>Signup?</a></p>
+                <p><a href='/main/register.php'>Signup?</a></p>
             </div>
         </form>
     </section>
@@ -85,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (data.error) {
                 errorMessage.textContent = data.error;
             } else if (data.success) {
-                window.location.href = '/index.php'; // Redirect on success
+                window.location.href = '/main/index.php'; // Redirect on success
             }
         })
         .catch(error => {
@@ -97,4 +98,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </body>
 </html>
 
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

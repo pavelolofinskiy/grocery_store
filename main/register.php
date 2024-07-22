@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'includes/db.php';
+include __DIR__ . '/../includes/db.php';
 
 
 $response = [];
@@ -44,9 +44,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<?php include 'includes/header.php'; ?>
+<?php include __DIR__ . '/../includes/header.php'; ?> 
 
-<link rel="stylesheet" href="assets/css/register.css">
+<link rel="stylesheet" href="/assets/css/register.css">
+<link rel="stylesheet" href="/assets/css/cart_popup.css">
 <body>
     <div class='info-div'>
         <div class='info-div-p'>
@@ -75,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <p id="error-message" class='error-message'></p>
             <div class='button-div'>
                 <button type="submit">Register</button>
-                <p><a href='/login.php'>Login</a></p>
+                <p><a href='/main/login.php'>Login</a></p>
             </div>
         </form>
     </section>
@@ -87,7 +88,7 @@ event.preventDefault();
 const formData = new FormData(this);
 const errorMessage = document.getElementById('error-message');
 
-fetch('/register.php', {
+fetch('/main/register.php', {
     method: 'POST',
     body: formData
 })
@@ -96,7 +97,7 @@ fetch('/register.php', {
     if (data.error) {
         errorMessage.textContent = data.error;
     } else if (data.success) {
-        window.location.href = '/index.php'; 
+        window.location.href = '/main/index.php'; 
     }
 })
 .catch(error => {
@@ -109,4 +110,4 @@ fetch('/register.php', {
 </body>
 </html>
 
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

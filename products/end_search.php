@@ -8,8 +8,8 @@
 </head>
 
 <?php
-include '../includes/header.php';
-include '../includes/db.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/db.php';
 
 $product_name = $_GET['item_name'];
 
@@ -38,5 +38,5 @@ $obj_array = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
 <?php
-include '../includes/footer.php';
+include __DIR__ . '/../includes/footer.php';
 ?>

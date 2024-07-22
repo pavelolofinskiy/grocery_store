@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets\css\main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/cart_popup.css">
 </head>
 
 <?php
-include '../includes/header.php';
-include '../includes/db.php';
+include __DIR__ . '/../includes/header.php';
+include __DIR__ . '/../includes/db.php';
 
 
 $sql = "SELECT * FROM products";
@@ -28,4 +29,4 @@ $products = $stmt->fetchAll();
     <?php endforeach; ?>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

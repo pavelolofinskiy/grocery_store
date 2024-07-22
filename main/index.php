@@ -1,23 +1,23 @@
-<?php
-session_start();
-?>
-
-<?php include 'includes/header.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Trove</title>
-    <link rel="stylesheet" href="assets\css\main.css">
-    <link rel="stylesheet" href="assets\css\hero.css">
-    <link rel="stylesheet" href="assets\css\second-section.css">
-    <link rel="stylesheet" href="assets\css\third-section.css">
-    <link rel="stylesheet" href="assets\css\fourth-section.css">
-    <link rel="stylesheet" href="assets\css\fifth-section.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/hero.css">
+    <link rel="stylesheet" href="/assets/css/second-section.css">
+    <link rel="stylesheet" href="/assets/css/third-section.css">
+    <link rel="stylesheet" href="/assets/css/fourth-section.css">
+    <link rel="stylesheet" href="/assets/css/fifth-section.css">
+    <link rel="stylesheet" href="/assets/css/cart_popup.css">
+    <link rel="stylesheet" type="/text/css" href="/assets/css/footer.css">
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<?php include __DIR__ . '/../includes/header.php';  ?>
+
+
 
 <main>
     <div class='text'>
@@ -33,7 +33,7 @@ session_start();
             <a class='button'>Shop now</a>
         </div>
         <div>
-            <img src="assets/img/hero-item.png"> 
+            <img src="/assets/img/hero-item.png"> 
         </div>
     </div>
 </main>
@@ -61,6 +61,7 @@ session_start();
         </div>
     </div>
 </section>
+
 
 
 <section class='grid-section'>
@@ -235,13 +236,11 @@ session_start();
             </form>
         </div>
         <div>
-            <img src="assets/img/second-image.png"> 
+            <img src="/assets/img/second-image.png"> 
         </div>
     </div>
 </section>
 
-<?php include 'includes/footer.php'; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?> 
 </body>
 </html>
-
-
