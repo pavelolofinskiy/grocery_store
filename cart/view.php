@@ -41,7 +41,7 @@ function formatPrice($price) {
     <?php endforeach; ?>
 </div>
 <button onclick="history.back()">Back</button>
-<p><a href='/cart/payment.php'>Purchase</a></p>
+<p><a href='/cart/payment.php?totalPrice=<?php echo $totalPrice; ?>'>Purchase</a></p>
 
 <p>Total Price: $<span id="total-price"><?php echo $totalPrice; ?></span></p>  
 
