@@ -34,6 +34,6 @@ if ($cartItem) {
     $stmt_insert->execute([$userId, $productId, $quantity]);
 }
 
-header('Location: ../cart/view.php');
+header('Location: ../products/list.php');
 exit;
 ?>

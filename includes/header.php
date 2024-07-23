@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <div class="overlay" id='overlay'></div> 
+    <div class="overlay" id='overlay'></div>
+    <div class="overlayPopup" id='overlayPopup'></div>
     <header class="header-section">
         <div class='header-shadow'>
             <div class="header-container">
@@ -46,18 +47,18 @@
                 <a href="../main/logout.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
                 <button id="cart-button">Cart</button>
-                <div id="cart-popup" class="popup">
-                    <div class="popup-content" id="popup-content">
-                        <span class="close" id="close-popup">&times;</span>
-                        <?php include __DIR__ . '/../cart/view.php'; ?>
-                    </div>
-                </div>
             </div>
             <div class="logo-menu2">
                 <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
             </div>
         </div>
     </header>
+    <div id="cart-popup" class="popup">
+        <div class="popup-content" id="popup-content">
+            <span class="close" id="close-popup">&times;</span>
+            <?php include __DIR__ . '/../cart/view.php'; ?>
+        </div>
+    </div>
 
     <script src='/assets/js/script.js'></script>
 </body>

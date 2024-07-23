@@ -6,7 +6,6 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    z-index: 44;
     position: relative;
 }
 
@@ -41,7 +40,6 @@
     margin: auto;
     justify-content: space-between;
     align-items: center;
-    z-index: 55;
     position: relative;
 }
 
@@ -56,7 +54,6 @@
     border-color: #64B496;
     border-radius: 5px;
     width: 30rem;
-    z-index: 55;
 }
 
 .input-form {
@@ -65,7 +62,6 @@
     position: relative;
     margin-left: 1rem;
     width: 27rem;
-    z-index: 55;
 }
 
 .input-form button {
@@ -80,7 +76,6 @@
     right: -3rem;
     background-color: #64B496;
     cursor: pointer;
-    z-index: 55;
 }
 
 .input-form i {
@@ -179,7 +174,7 @@
 }
 
 .header-section {
-    z-index: 1000;
+    z-index: 200;
     position: relative;
     background-color: #fff;
     height: auto;

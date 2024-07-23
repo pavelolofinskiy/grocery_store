@@ -71,6 +71,8 @@ main {
     padding: 14px 22px;
     cursor: pointer;
     transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+    position: relative;
+    z-index: 0;
 }
 
 .button:hover {

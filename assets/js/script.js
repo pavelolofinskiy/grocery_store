@@ -65,41 +65,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 })
 
-// Load cart content into the popup
-document.addEventListener('DOMContentLoaded', function() {
-    var cartButton = document.getElementById('cart-button');
-    var cartPopup = document.getElementById('cart-popup');
-    var closePopup = document.getElementById('close-popup');
-
-    cartButton.addEventListener('click', function() {
-        cartPopup.style.display = 'flex';
-    });
-
-    closePopup.addEventListener('click', function() {
-        cartPopup.style.display = 'none';
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === cartPopup) {
-            cartPopup.style.display = 'none';
-        }
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     var cartButton = document.getElementById('cart-button');
     var cartPopup = document.getElementById('cart-popup');
     var closePopup = document.getElementById('close-popup');
-    var cartOverlay = document.getElementById('cartOverlay');
+    var overlayPopup = document.getElementById('overlayPopup')
 
     function openCartPopup() {
-        fetch('auth_check.php')
+        fetch('/main/auth_check.php')
             .then(response => response.json())
             .then(data => {
                 if (data.authenticated) {
-                    cartButton.addEventListener('click', function() {
-                        cartPopup.style.display = 'flex';
-                    });
+                    cartPopup.classList.add('show');
+                    overlayPopup.classList.add('show');
                 } else {
                     window.location.href = '/main/login.php'; 
                 }
@@ -111,15 +90,24 @@ document.addEventListener('DOMContentLoaded', function() {
         openCartPopup();
     });
 
+    function closeCartPopup() {
+        overlayPopup.classList.remove('show');
+        cartPopup.classList.add('fade-out');
+
+        cartPopup.addEventListener('animationend', function handleAnimationEnd() {
+            cartPopup.classList.remove('fade-out');
+            cartPopup.classList.remove('show');
+            cartPopup.removeEventListener('animationend', handleAnimationEnd);
+        });
+    }
+
     closePopup.addEventListener('click', function() {
-        cartPopup.style.display = 'none';
-        cartOverlay.style.display = 'none';
+        closeCartPopup();
     });
 
     window.addEventListener('click', function(event) {
-        if (event.target === cartOverlay) {
-            cartPopup.style.display = 'none';
-            cartOverlay.style.display = 'none';
+        if (event.target === cartPopup) {
+            closeCartPopup();
         }
     });
 });
