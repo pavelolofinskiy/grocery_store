@@ -59,6 +59,7 @@
     border-radius: 50px 0 0 50px;
     font-size: 16px;
     font-family: var(--second-font-family);
+    width: 100%;
 }
 
 .form-container button {
@@ -71,6 +72,7 @@
     font-size: 16px;
     font-family: var(--second-font-family);
     transition: background-color 0.3s ease-out;
+    justify-content: start;
 }
 
 .form-container button:hover {
@@ -81,7 +83,12 @@
     .background {
         width: 96%;
     }
-    
+}
+
+@media (max-width: 960px) {
+    .form-container {
+        width: 50%;
+    }
 }
 
 @media (max-width: 930px) {
@@ -91,6 +98,10 @@
 
     .background {
         width: 95%;
+    }
+
+    .form-container input {
+        width: 70%;
     }
     
 }
@@ -111,6 +122,10 @@
 
     .background-general-p {
         font-size: 6vw;
+    }
+
+    .form-container input {
+        width: 90%;
     }
     
 }
@@ -137,7 +152,7 @@
     }
 
     .form-container input {
-        width: 70%;
+        width: 80%;
     }
     
 }

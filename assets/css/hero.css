@@ -25,6 +25,7 @@ main {
 .text-div {
     padding: 0 15px;
     position: relative;
+    margin-top: 6rem;
 }
 
 .text img {

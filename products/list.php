@@ -36,7 +36,7 @@ $products = $stmt->fetchAll();
     <p class="list-general-grid-p">All Products</p>
     <div class="list-product-grid">
         <?php foreach ($products as $product): ?>
-            <a href="products/product_view.php?id=<?php echo $product['id']; ?>" class="list-product-card-link">
+            <a href="/products/product_view.php?id=<?php echo $product['id']; ?>" class="list-product-card-link">
                 <div class="list-product-card">
                     <img src="<?php echo $product['img_link']; ?>" alt="<?php echo $product['name']; ?>">
                     <p class="list-product-p"><?php echo $product['name']; ?></p>

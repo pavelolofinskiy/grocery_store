@@ -12,8 +12,9 @@ $product = $stmt->fetch();
 if ($product):
 ?>
 <link rel="stylesheet" href="/assets/css/cart_popup.css">
-<div class="cart">
-    <div class="cart-item">
+<link rel="stylesheet" href="/assets/css/product_view.css">
+<div class="product">
+    <div class="product-item">
         <h3><?php echo $product['name']; ?></h3>
         <p><?php echo $product['description']; ?></p>
         <p>Price: $<?php echo $product['price']; ?></p>

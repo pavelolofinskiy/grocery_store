@@ -175,9 +175,11 @@
 
 .header-section {
     z-index: 200;
-    position: relative;
+    position: fixed;
     background-color: #fff;
     height: auto;
+    width: 100%;
+
 }
 
 
@@ -227,7 +229,6 @@
     }
 
     .user-actions {
-        display: none;
     }
     
     
