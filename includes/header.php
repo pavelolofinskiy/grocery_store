@@ -9,6 +9,27 @@
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
 
+<?php 
+include __DIR__ . '/../includes/db.php';
+
+session_start(); 
+
+$userId = $_SESSION['user_id'];
+
+$sql = "SELECT cart.id, products.name, products.price, cart.quantity, products.img_link
+        FROM cart
+        JOIN products ON cart.product_id = products.id
+        WHERE cart.user_id = ?";
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$userId]);
+$cartItems = $stmt->fetchAll();
+
+$totalProducts = 0;
+foreach ($cartItems as $item) {
+    $totalProducts += $item['quantity'];
+}
+
+?>
 
 <body>
     <div class="overlay" id='overlay'></div>
@@ -48,6 +69,7 @@
                 <a href="../main/logout.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
                 <button id="cart-button">Cart</button>
+                <p id='products-count'><?php echo $totalProducts; ?></p>
             </div>
             <div class="logo-menu2">
                 <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">
@@ -62,5 +84,6 @@
     </div>
 
     <script src='/assets/js/script.js'></script>
+    <script src='/assets/js/cart.js'></script>
 </body>
 </html>
