@@ -28,7 +28,6 @@ function formatPrice($price) {
 <link href='https://unpkg.com/css.gg@2.0.0/icons/css/trash.css' rel='stylesheet'>
 
 <div class="cart" id="cart-items">
-    <p><?php echo $totalProducts; ?></p> 
     <div class="cart-items-wrapper">
         <?php foreach ($cartItems as $item): ?>
             <div class="cart-item" data-id="<?php echo $item['id']; ?>">

@@ -8,13 +8,41 @@ document.addEventListener('DOMContentLoaded', function() {
     var totalPriceElement = document.getElementById('total-price');
     var checkoutLink = document.getElementById('checkout-link');
     var totalProduct = document.getElementById('products-count');
-
+    
     function updateCartCount() {
         var totalProducts = 0;
         document.querySelectorAll('.quantity-input').forEach(function(input) {
             totalProducts += parseInt(input.value, 10);
         });
         totalProduct.textContent = totalProducts;
+    }
+
+    if (!window.addToCartScriptInitialized) {
+        window.addToCartScriptInitialized = true;
+
+        var addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var productId = this.getAttribute('data-product-id');
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/cart/add_to_cart.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.success) {
+                            totalProduct.textContent = parseInt(totalProduct.textContent, 10) + 1;
+                            
+                        } else {
+                            alert('Error adding product to cart.');
+                        }
+                    }
+                };
+                xhr.send('product_id=' + productId);
+            });
+        });
     }
 
     function updateQuantity(cartId, newQuantity) {
@@ -139,4 +167,5 @@ document.addEventListener('DOMContentLoaded', function() {
         totalPriceElement.textContent = totalPrice.toFixed(2);
         checkoutLink.href = '/cart/payment.php?totalPrice=' + totalPrice.toFixed(2);
     }
+
 });

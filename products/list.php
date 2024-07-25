@@ -36,16 +36,16 @@ $products = $stmt->fetchAll();
     <p class="list-general-grid-p">All Products</p>
     <div class="list-product-grid">
         <?php foreach ($products as $product): ?>
-            <a href="/products/product_view.php?id=<?php echo $product['id']; ?>" class="list-product-card-link">
+            <div href="/products/product_view.php?id=<?php echo $product['id']; ?>" class="list-product-card-link">
                 <div class="list-product-card">
                     <img src="<?php echo $product['img_link']; ?>" alt="<?php echo $product['name']; ?>">
                     <p class="list-product-p"><?php echo $product['name']; ?></p>
                     <div class="list-price-div">
                         <p class="list-price">$<?php echo $product['price']; ?> <span class="list-original-price">$<?php echo number_format($product['price'] * 1.1, 2); ?></span></p>
-                        <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                        <button class="add-to-cart" id='cart-button' data-product-id="<?php echo $product['id']; ?>"><i class="fa-solid fa-cart-shopping"></i>Add</button>
                     </div>
                 </div>
-            </a>
+        </div>
         <?php endforeach; ?>
     </div>
 </section>
@@ -68,3 +68,8 @@ $products = $stmt->fetchAll();
 
 </body>
 </html>
+
+<script>
+</script>
+<script src='/assets/js/script.js'></script>
+<script src='/assets/js/cart.js'></script>

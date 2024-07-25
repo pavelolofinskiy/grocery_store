@@ -12,7 +12,9 @@
 <?php 
 include __DIR__ . '/../includes/db.php';
 
-session_start(); 
+session_start();     
+
+
 
 $userId = $_SESSION['user_id'];
 

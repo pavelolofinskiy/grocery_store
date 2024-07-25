@@ -2,6 +2,7 @@
     max-width: 1200px;
     margin: auto;
     padding: 13px;
+    padding-top: 12rem;
 }
 
 .list-general-grid-p {
@@ -13,6 +14,11 @@
 }
 
 .list-product-card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.cart-link {
     text-decoration: none;
     display: block;
 }
@@ -36,6 +42,8 @@
     padding: 10px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
 }
 
 .list-product-card img {
@@ -63,6 +71,8 @@
     margin-top: 10px;
     transition: background-color 0.2s ease-out, transform 0.3s ease-out;
     text-decoration: none; 
+    position: relative;
+    z-index: 800;
 }
 
 .list-product-card button:hover {
@@ -81,6 +91,8 @@
     align-items: center;
     margin-top: 1rem;
 }
+
+
 
 .list-price-div p {
     font-family: var(--second-font-family-bold);
