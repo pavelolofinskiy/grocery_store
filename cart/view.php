@@ -1,6 +1,5 @@
 <?php
 include __DIR__ . '/../includes/db.php';
-
 session_start();
 
 $userId = $_SESSION['user_id'];
@@ -35,7 +34,7 @@ function formatPrice($price) {
                         <img src="<?php echo htmlspecialchars($item['img_link']); ?>" alt="Product Image">
                     </div>
                     <p class="product-name"><?php echo htmlspecialchars($item['name']); ?></p>
-                    <a href="/cart/remove.php?id=<?php echo $item['id']; ?>" class="remove-item"><i class="fa-solid fa-trash-can"></i></i></a>
+                    <a href="#" class="remove-item"><i class="fa-solid fa-trash-can"></i></a>
                 </div>
                 <div class='second-row'>
                     <div class="quantity">
@@ -54,92 +53,10 @@ function formatPrice($price) {
 </div>
 
 <div class='checkout'>
-    <p><a href='/cart/payment.php?totalPrice=<?php echo $totalPrice; ?>'>Check Out</a></p>
-    <p>Total Price: $<span id="total-price"><?php echo $totalPrice; ?></span></p>
+    <p><a href='/cart/payment.php?totalPrice=<?php echo $totalPrice; ?>' id="checkout-link">Check Out</a></p>
+    <p>Total Price: $<span id="total-price"><?php echo formatPrice($totalPrice); ?></span></p>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var updateButtonsLeft = document.querySelectorAll('.update-quantity-left');
-    var updateButtonsRight = document.querySelectorAll('.update-quantity-right');
-    var quantityInputs = document.querySelectorAll('.quantity-input');
-
-    function updateQuantity(cartId, newQuantity) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/cart/update_quantity.php', true);
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                document.getElementById('total-price').textContent = response.totalPrice.toFixed(2);
-
-                var cartItem = document.querySelector('.cart-item[data-id="' + cartId + '"]');
-                var itemTotalElement = cartItem.querySelector('.cart-item-total');
-                var itemPrice = parseFloat(cartItem.querySelector('.cart-price').textContent.replace('$', ''));
-                var itemTotalPrice = itemPrice * newQuantity;
-                itemTotalElement.textContent = '$' + itemTotalPrice.toFixed(2);
-            }
-        };
-        xhr.send('cart_id=' + cartId + '&quantity=' + newQuantity);
-    }
-
-    updateButtonsLeft.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var cartItem = this.closest('.cart-item');
-            var cartId = cartItem.getAttribute('data-id');
-            var quantityInput = cartItem.querySelector('.quantity-input');
-            var currentQuantity = parseInt(quantityInput.value);
-
-            if (currentQuantity > 1) {
-                currentQuantity--;
-                quantityInput.value = currentQuantity;
-                updateQuantity(cartId, currentQuantity);
-            }
-        });
-    });
-
-    updateButtonsRight.forEach(function(button) {
-        button.addEventListener('click', function() {
-            var cartItem = this.closest('.cart-item');
-            var cartId = cartItem.getAttribute('data-id');
-            var quantityInput = cartItem.querySelector('.quantity-input');
-            var currentQuantity = parseInt(quantityInput.value);
-
-            currentQuantity++;
-            quantityInput.value = currentQuantity;
-            updateQuantity(cartId, currentQuantity);
-        });
-    });
-
-    quantityInputs.forEach(function(input) {
-        input.addEventListener('blur', function() {
-            var cartItem = this.closest('.cart-item');
-            var cartId = cartItem.getAttribute('data-id');
-            var newQuantity = parseInt(this.value);
-            if (newQuantity > 0) {
-                updateQuantity(cartId, newQuantity);
-            } else {
-                this.value = 1;
-                updateQuantity(cartId, 1);
-            }
-        });
-
-        input.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                var cartItem = this.closest('.cart-item');
-                var cartId = cartItem.getAttribute('data-id');
-                var newQuantity = parseInt(this.value);
-                if (newQuantity > 0) {
-                    updateQuantity(cartId, newQuantity);
-                } else {
-                    this.value = 1;
-                    updateQuantity(cartId, 1);
-                }
-            }
-        });
-    });
-});
-</script>
+<script src='/assets/js/cart.js'></script>
 </body>
 </html>

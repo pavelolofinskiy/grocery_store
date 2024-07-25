@@ -3,7 +3,7 @@ include __DIR__ . '/../includes/db.php';
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /main/login.php');
+    echo json_encode(['redirect' => '/main/login.php']);
     exit;
 }
 
@@ -13,5 +13,5 @@ $sql = "DELETE FROM cart WHERE id = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$cartItemId]);
 
-header('Location: view.php');
+echo json_encode(['success' => true]);
 ?>

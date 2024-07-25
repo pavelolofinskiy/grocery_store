@@ -1,3 +1,5 @@
+
+
 .cart {
     max-width: 1200px;
     margin: auto;
@@ -140,11 +142,24 @@
 }
 
 .checkout a:hover {
-
+    background-color: var(--hover-button-color);
 }
 
 @media (max-width: 510px) {
     .product-name {
         font-size: 2.8vw;
     }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 0.5s forwards;
 }
