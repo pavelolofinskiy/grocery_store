@@ -14,8 +14,6 @@ include __DIR__ . '/../includes/db.php';
 
 session_start();     
 
-
-
 $userId = $_SESSION['user_id'];
 
 $sql = "SELECT cart.id, products.name, products.price, cart.quantity, products.img_link
@@ -32,7 +30,7 @@ foreach ($cartItems as $item) {
 }
 
 ?>
-
+<link rel="stylesheet" href="/assets/css/cart.css">
 <body>
     <div class="overlay" id='overlay'></div>
     <div class="overlayPopup" id='overlayPopup'></div>
@@ -81,7 +79,10 @@ foreach ($cartItems as $item) {
     <div id="cart-popup" class="popup">
         <div class="popup-content" id="popup-content">
             <span class="close" id="close-popup">&times;</span>
-            <?php include __DIR__ . '/../cart/view.php'; ?>
+            <?php include __DIR__ . '/../cart/get_cart.php'; ?>
+            <p><a href='/cart/payment.php?totalPrice=<?php echo $totalPrice; ?>' id="checkout-link">Check Out</a></p>
+            <p>Total Price: $<span id="total-price"><?php echo formatPrice($totalPrice); ?></span></p>
+            <button id="refresh-cart" class="refresh-cart-button">Refresh Cart</button>
         </div>
     </div>
 

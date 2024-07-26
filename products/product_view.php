@@ -37,3 +37,55 @@ endif;
 include __DIR__ . '/../includes/footer.php';
 ?>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form[action="/cart/add.php"]');
+    const cartButton = document.querySelector('#cart-container button');
+    const cartContainer = document.querySelector('#cart-popup');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const formData = new FormData(form);
+
+        fetch('/cart/add.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Update cart item count
+            document.getElementById('cart-item-count').innerText = data.cartItemCount;
+
+            // Show updated cart items
+            updateCartPopup(data.cartItems);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+
+    // Show cart popup
+    cartButton.addEventListener('click', function() {
+        cartContainer.classList.toggle('visible');
+    });
+
+    // Function to update cart items in the popup
+    function updateCartPopup(items) {
+        const cartContent = cartContainer.querySelector('.cart-items');
+        cartContent.innerHTML = ''; // Clear previous content
+
+        items.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.classList.add('cart-item');
+            itemElement.innerHTML = `
+                <p>${item.name}</p>
+                <p>Quantity: ${item.quantity}</p>
+                <p>Price: $${item.price}</p>
+                <button class="remove-item" data-id="${item.id}">Remove</button>
+            `;
+            cartContent.appendChild(itemElement);
+        });
+    }
+});
+</script>

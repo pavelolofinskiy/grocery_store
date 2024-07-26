@@ -38,6 +38,7 @@
         </div>
     </div>
 </main>
+<a href="javascript:window.top.location.reload(true)" class="continue">Continue</a>
 
 <section class="second-section">
     <div class='banners'>

@@ -1,4 +1,6 @@
-
+.cart2 {
+    display: none;
+}
 
 .cart {
     max-width: 1200px;

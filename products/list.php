@@ -42,7 +42,7 @@ $products = $stmt->fetchAll();
                     <p class="list-product-p"><?php echo $product['name']; ?></p>
                     <div class="list-price-div">
                         <p class="list-price">$<?php echo $product['price']; ?> <span class="list-original-price">$<?php echo number_format($product['price'] * 1.1, 2); ?></span></p>
-                        <button class="add-to-cart" id='cart-button' data-product-id="<?php echo $product['id']; ?>"><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                        <button class="add-to-cart" id='add-button' data-product-id="<?php echo $product['id']; ?>"><i class="fa-solid fa-cart-shopping"></i>Add</button>
                     </div>
                 </div>
         </div>
@@ -66,10 +66,8 @@ $products = $stmt->fetchAll();
 
 <?php include __DIR__ . '/../includes/footer.php'; ?>
 
-</body>
-</html>
-
-<script>
-</script>
 <script src='/assets/js/script.js'></script>
 <script src='/assets/js/cart.js'></script>
+
+</body>
+</html>

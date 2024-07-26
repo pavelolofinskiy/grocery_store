@@ -1,10 +1,9 @@
 <?php
 include __DIR__ . '/../includes/db.php';
-
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: /main/login.php');
+    echo 'Please log in first';
     exit;
 }
 
@@ -14,7 +13,7 @@ $quantity = $_POST['quantity'];
 
 // Validate quantity
 if ($quantity < 1 || $quantity > 20) {
-    echo '<p>Invalid quantity</p>';
+    echo 'Invalid quantity';
     exit;
 }
 
@@ -34,6 +33,11 @@ if ($cartItem) {
     $stmt_insert->execute([$userId, $productId, $quantity]);
 }
 
-header('Location: ../products/list.php');
-exit;
+// Return the updated cart item count (or other response as needed)
+$sql_count = "SELECT SUM(quantity) as total FROM cart WHERE user_id = ?";
+$stmt_count = $pdo->prepare($sql_count);
+$stmt_count->execute([$userId]);
+$cartTotal = $stmt_count->fetchColumn();
+
+echo $cartTotal;
 ?>
