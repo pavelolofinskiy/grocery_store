@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(error => console.error('Error:', error));
   }
 
+
+    
+
   function closeCartPopup() {
     overlayPopup.classList.remove('show');
     cartPopup.classList.add('fade-out');
@@ -234,6 +237,11 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   }
+
+  cartButton.addEventListener('click' , function() {
+    refreshCart();
+    openCartPopup();
+  }) 
 
   // Initialize event listeners for the first time
   initializeEventListeners();

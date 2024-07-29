@@ -12,9 +12,13 @@
 <?php 
 include __DIR__ . '/../includes/db.php';
 
-session_start();     
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}     
 
 $userId = $_SESSION['user_id'];
+
 
 $sql = "SELECT cart.id, products.name, products.price, cart.quantity, products.img_link
         FROM cart

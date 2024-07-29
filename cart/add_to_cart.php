@@ -1,5 +1,8 @@
 <?php
-session_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
 include __DIR__ . '/../includes/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

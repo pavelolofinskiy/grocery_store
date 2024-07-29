@@ -1,5 +1,10 @@
 <?php
-session_start();
+
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+} 
+
 include __DIR__ . '/../includes/db.php';
 
 $userId = $_SESSION['user_id'];
