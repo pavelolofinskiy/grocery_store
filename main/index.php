@@ -242,6 +242,9 @@
     </div>
 </section>
 
+
+<script src='/assets/js/script.js'></script>
+<script src='/assets/js/cart.js'></script>
 <?php include __DIR__ . '/../includes/footer.php'; ?> 
 </body>
 </html>

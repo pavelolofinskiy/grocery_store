@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/header.css?version=412142">
+    <link rel="stylesheet" type="text/css" href="/assets/css/footer.cssversion=412142">
     <link rel="stylesheet" href="assets/css/cart_popup.css">
     <script src="https://kit.fontawesome.com/71ee91ecc9.js" crossorigin="anonymous"></script>
 </head>
