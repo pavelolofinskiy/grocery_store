@@ -94,7 +94,6 @@ $products = $stmt->fetchAll();
 <section class='grid-section'>
     <p class='general-grid-p'>Popular Products</p>
     <div class="product-grid">
-        <a>
             <div class="product-card">
                 <img src="/assets/img/lemon.png" alt="Fresh organic villa farm lemon 500gm pack">
                 <p class='product-p'>Fresh organic villa farm lemon 500gm pack</p>
@@ -109,8 +108,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/hazelnut.png" alt="Best snacks with hazel nut pack 200gm">
                 <p class='product-p'>Best snacks with hazel nut pack 200gm</p>
@@ -125,8 +123,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/watermelon.png" alt="Organic fresh venilla farm watermelon 5kg">
                 <p class='product-p'>Organic fresh venilla farm watermelon 5kg</p>
@@ -141,8 +138,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/apple.png" alt="Fresh organic apple 1kg simla marming">
                 <p class='product-p'>Fresh organic apple 1kg simla marming</p>
@@ -157,8 +153,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/cereal.png" alt="Blue Diamond Almonds Lightly Salted Vegetables">
                 <p class='product-p'>Blue Diamond Almonds Lightly Salted Vegetables</p>
@@ -173,8 +168,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/yogurt.png" alt="Chobani Complete Vanilla Greek Yogurt">
                 <p class='product-p'>Chobani Complete Vanilla Greek Yogurt</p>
@@ -189,8 +183,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/pistachio.png" alt="Canada Dry Ginger Ale - 2L Bottle - 200ml - 400g">
                 <p class='product-p'>Canada Dry Ginger Ale - 2L Bottle - 200ml - 400g</p>
@@ -205,8 +198,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/salmon.png" alt="Encore Seafoods Stuffed Alaskan Salmon">
                 <p class='product-p'>Encore Seafoods Stuffed Alaskan Salmon</p>
@@ -221,8 +213,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/icecream.png" alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup">
                 <p class='product-p'>Haagen-Dazs Caramel Cone Ice Cream Ketchup</p>
@@ -237,8 +228,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
-        <a>
+
             <div class="product-card">
                 <img src="/assets/img/coffee.png" alt="Cafe Altura Organic Coffee - Light Roast">
                 <p class='product-p'>Cafe Altura Organic Coffee - Light Roast</p>
@@ -253,7 +243,7 @@ $products = $stmt->fetchAll();
                     <?php endif; ?>
                 </div>
             </div>
-        </a>
+
     </div>
 </section>
 <section>
