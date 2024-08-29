@@ -42,13 +42,20 @@ $products = $stmt->fetchAll();
                     <p class="list-product-p"><?php echo $product['name']; ?></p>
                     <div class="list-price-div">
                         <p class="list-price">$<?php echo $product['price']; ?> <span class="list-original-price">$<?php echo number_format($product['price'] * 1.1, 2); ?></span></p>
-                        <button class="add-to-cart" id='add-button' data-product-id="<?php echo $product['id']; ?>"><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                        <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                            <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                        <?php else: ?>
+                            <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                            <button class="add-to-cart" id="add-button" data-product-id="<?php echo $product['id']; ?>"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                        <?php endif; ?>
                     </div>
                 </div>
         </div>
         <?php endforeach; ?>
     </div>
 </section>
+
 
 <div class="pagination">
     <?php if ($page > 1): ?>
