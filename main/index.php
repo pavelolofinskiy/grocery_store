@@ -17,6 +17,32 @@
 <body>
 <?php include __DIR__ . '/../includes/header.php';  ?>
 
+<?php
+
+
+$products_per_page = 8;
+
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+
+$offset = ($page - 1) * $products_per_page;
+
+$total_products_sql = "SELECT COUNT(*) FROM products";
+$total_products_stmt = $pdo->query($total_products_sql);
+$total_products = $total_products_stmt->fetchColumn();
+$total_pages = ceil($total_products / $products_per_page);
+
+$sql = "SELECT * FROM products LIMIT :limit OFFSET :offset";
+$stmt = $pdo->prepare($sql);
+$stmt->bindParam(':limit', $products_per_page, PDO::PARAM_INT);
+$stmt->bindParam(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$products = $stmt->fetchAll();
+?>
+
+
+
+<script src='/assets/js/script.js'></script>
+<script src='/assets/js/cart.js'></script>
 
 
 <main>
@@ -68,103 +94,163 @@
 <section class='grid-section'>
     <p class='general-grid-p'>Popular Products</p>
     <div class="product-grid">
-        <a href="products/product_view.php?id=7" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/lemon.png" alt="Fresh organic villa farm lemon 500gm pack">
                 <p class='product-p'>Fresh organic villa farm lemon 500gm pack</p>
                 <div class='price-div'>
                     <p class="price">$28.85 <span class="original-price">$32.50</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=124" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/hazelnut.png" alt="Best snacks with hazel nut pack 200gm">
                 <p class='product-p'>Best snacks with hazel nut pack 200gm</p>
                 <div class='price-div'>
                     <p class="price">$52.85 <span class="original-price">$59.99</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=125" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/watermelon.png" alt="Organic fresh venilla farm watermelon 5kg">
                 <p class='product-p'>Organic fresh venilla farm watermelon 5kg</p>
                 <div class='price-div'>
                     <p class="price">$48.85 <span class="original-price">$50.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=126" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/apple.png" alt="Fresh organic apple 1kg simla marming">
                 <p class='product-p'>Fresh organic apple 1kg simla marming</p>
                 <div class='price-div'>
                     <p class="price">$17.85 <span class="original-price">$20.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=127" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/cereal.png" alt="Blue Diamond Almonds Lightly Salted Vegetables">
                 <p class='product-p'>Blue Diamond Almonds Lightly Salted Vegetables</p>
                 <div class='price-div'>
                     <p class="price">$23.85 <span class="original-price">$25.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=128" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/yogurt.png" alt="Chobani Complete Vanilla Greek Yogurt">
                 <p class='product-p'>Chobani Complete Vanilla Greek Yogurt</p>
                 <div class='price-div'>
                     <p class="price">$54.85 <span class="original-price">$60.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=129" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/pistachio.png" alt="Canada Dry Ginger Ale - 2L Bottle - 200ml - 400g">
                 <p class='product-p'>Canada Dry Ginger Ale - 2L Bottle - 200ml - 400g</p>
                 <div class='price-div'>
                     <p class="price">$32.85 <span class="original-price">$35.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=130" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/salmon.png" alt="Encore Seafoods Stuffed Alaskan Salmon">
                 <p class='product-p'>Encore Seafoods Stuffed Alaskan Salmon</p>
                 <div class='price-div'>
                     <p class="price">$35.85 <span class="original-price">$40.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=131" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/icecream.png" alt="Haagen-Dazs Caramel Cone Ice Cream Ketchup">
                 <p class='product-p'>Haagen-Dazs Caramel Cone Ice Cream Ketchup</p>
                 <div class='price-div'>
                     <p class="price">$22.85 <span class="original-price">$25.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
-        <a href="/cart/add.php?id=132" class="product-card-link">
+        <a>
             <div class="product-card">
                 <img src="/assets/img/coffee.png" alt="Cafe Altura Organic Coffee - Light Roast">
                 <p class='product-p'>Cafe Altura Organic Coffee - Light Roast</p>
                 <div class='price-div'>
                     <p class="price">$23.85 <span class="original-price">$28.00</span></p>
-                    <button><i class="fa-solid fa-cart-shopping"></i>Add</button>
+                    <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
                 </div>
             </div>
         </a>
