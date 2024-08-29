@@ -70,10 +70,10 @@ foreach ($cartItems as $item) {
             </form>
             <div class="user-actions">
                 <img class='img2' src='/assets/img/account.png'>
-                <a href="../main/logout.php">Account</a>
+                <a href="../main/login.php">Account</a>
                 <img class='img3' src='/assets/img/cart.png'>
-                <button id="cart-button">Cart</button>
-                <p id='products-count'><?php echo $totalProducts; ?></p>
+                <button class="cart-button" id="cart-button">Cart</button>
+                <p class='products-count'id='products-count'><?php echo $totalProducts; ?></p>
             </div>
             <div class="logo-menu2">
                 <img src="/assets/img/div.cr-category-toggle.png" alt="Menu">

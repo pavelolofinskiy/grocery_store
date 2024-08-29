@@ -15,6 +15,23 @@
     display: none;
 }
 
+.cart-button {
+    text-decoration: none;
+    color: #000;
+    font-family: var(--main-font-family);
+    font-weight: 500;
+    background: none;
+    border: none;
+}
+
+.products-count {
+    text-decoration: none;
+    color: #000;
+    font-family: var(--main-font-family);
+    font-weight: 500;
+    margin-left: 0.3rem;
+}
+
 .search {
     display: none;
 }

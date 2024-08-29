@@ -1,4 +1,4 @@
-USE ecommerce;
+USE u845536524_newecommerce;
 
 INSERT INTO products (name, img_link, price, description) VALUES
 ('Blue Diamond Almonds Lightly Salted', '/assets/img/almonds.png', 238.85, 'Blue Diamond Almonds Lightly Salted offer a deliciously satisfying crunch with a light touch of salt. These premium almonds are perfect for snacking or adding a nutritious touch to your recipes. They are roasted to perfection, ensuring a crispy texture and a rich, nutty flavor that enhances any dish. Enjoy them as a quick snack or as an ingredient in your favorite dishes. Each package is carefully sealed to preserve freshness and quality. Ideal for those who love a healthy, flavorful treat.'),
