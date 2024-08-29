@@ -105,7 +105,7 @@ $products = $stmt->fetchAll();
                         <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
                     <?php else: ?>
                         <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
-                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -121,7 +121,7 @@ $products = $stmt->fetchAll();
                         <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
                     <?php else: ?>
                         <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
-                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -137,7 +137,7 @@ $products = $stmt->fetchAll();
                         <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
                     <?php else: ?>
                         <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
-                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                        <button class="add-to-cart" id="add-button" data-product-id="1"><i class="fa-solid fa-cart-shopping"></i> Add</button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -169,7 +169,7 @@ $products = $stmt->fetchAll();
                         <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
                     <?php else: ?>
                         <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
-                        <button class="add-to-cart" id="add-button" data-product-id="2"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                        <button class="add-to-cart" id="add-button" data-product-id="3"><i class="fa-solid fa-cart-shopping"></i> Add</button>
                     <?php endif; ?>
                 </div>
             </div>
@@ -275,7 +275,13 @@ $products = $stmt->fetchAll();
                     <div class="progress-bar"></div>
                 </div>
                 <p class="sold">Sold: 90/120</p>
-                <button>Add To Cart</button>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
             </div>
             <div class="second-product-card">
                 <img src="/assets/img/snacks.png" alt="Snacks">
@@ -285,7 +291,13 @@ $products = $stmt->fetchAll();
                     <div class="progress-bar"></div>
                 </div>
                 <p class="sold">Sold: 90/120</p>
-                <button>Add To Cart</button>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
             </div>
             <div class="second-product-card">
                 <img src="/assets/img/veggies.png" alt="Veggie Pops">
@@ -295,7 +307,13 @@ $products = $stmt->fetchAll();
                     <div class="progress-bar"></div>
                 </div>
                 <p class="sold">Sold: 90/120</p>
-                <button>Add To Cart</button>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
             </div>
             <div class="second-product-card">
                 <img src="/assets/img/almonds.png" alt="Almonds">
@@ -305,7 +323,13 @@ $products = $stmt->fetchAll();
                     <div class="progress-bar"></div>
                 </div>
                 <p class="sold">Sold: 90/120</p>
-                <button>Add To Cart</button>
+                <?php if (!isset($_SESSION['user_id'])): ?>
+                            <!-- Если пользователь не авторизован, перенаправляем его на страницу входа -->
+                        <a href="/main/login.php" ></i> <button class="add-to-cart"><i class="fa-solid fa-cart-shopping"></i>Add</button></a>
+                    <?php else: ?>
+                        <!-- Если пользователь авторизован, отображаем кнопку добавления в корзину -->
+                        <button class="add-to-cart" id="add-button" data-product-id="5"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                    <?php endif; ?>
             </div>
         </div>
     </div>
